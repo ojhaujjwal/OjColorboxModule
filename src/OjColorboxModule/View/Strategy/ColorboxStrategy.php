@@ -40,7 +40,7 @@ class ColorboxStrategy extends AbstractListenerAggregate
             $vm->setTemplate('oj-colorbox-module/parent-refresh');
         }
 
-        $vm->setTerminal(false);
+        $vm->setTerminal(true);
         $response = $event->getResponse() ?: new HttpResponse();
         $response->setStatusCode(200);
 
