@@ -1,5 +1,5 @@
 <?php
 namespace OjColorboxModule\Exception;
 
-interface ExceptionInterface 
+interface ExceptionInterface
 {}

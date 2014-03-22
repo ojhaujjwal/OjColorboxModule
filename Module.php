@@ -7,7 +7,7 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ControllerPluginProviderInterface;
 
-class Module implements 
+class Module implements
     BootstrapListenerInterface,
     ConfigProviderInterface,
     AutoloaderProviderInterface,
@@ -16,13 +16,12 @@ class Module implements
 
     /**
      * {@inheritDoc}
-     */ 
+     */
     public function onBootstrap(EventInterface $e)
     {
         $serviceManager = $e->getApplication()->getServiceManager();
         $e->attachAggregate($serviceManager->get('OjColorboxModule\View\Strategy\ColorboxStrategy'));
     }
-
 
     /**
      * {@inheritDoc}
@@ -56,9 +55,9 @@ class Module implements
     {
         return [
             'invokables' => [
-                'OjColorboxModule\Controller\Plugin\ColorboxClose' 
+                'OjColorboxModule\Controller\Plugin\ColorboxClose'
                     => 'OjColorboxModule\Controller\Plugin\ColorboxClose',
-                'OjColorboxModule\Controller\Plugin\ParentRedirect' 
+                'OjColorboxModule\Controller\Plugin\ParentRedirect'
                     => 'OjColorboxModule\Controller\Plugin\ParentRedirect',
             ],
             'aliases' => [
