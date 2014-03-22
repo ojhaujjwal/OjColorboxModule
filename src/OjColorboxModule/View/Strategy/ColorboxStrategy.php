@@ -33,18 +33,16 @@ class ColorboxStrategy extends AbstractListenerAggregate
         
         if ($exception instanceof Exception\ColorboxCloseException) {
             $vm = new ViewModel();
-            $vm->setTemplate('oj-colorbox-module/colorbox-close');
-            $vm->setTerminal(false);            
+            $vm->setTemplate('oj-colorbox-module/colorbox-close');            
         } elseif ($exception instanceof Exception\ParentRedirectException) {
             $vm = new ViewModel(['redirect' => $url]);
-            $vm->setTemplate('oj-colorbox-module/parent-redirect');
-            $vm->setTerminal(false);            
+            $vm->setTemplate('oj-colorbox-module/parent-redirect');            
         } elseif ($exception instanceof Exception\ParentReloadException) {
             $vm = new ViewModel();
-            $vm->setTemplate('oj-colorbox-module/parent-refresh');
-            $vm->setTerminal(false);            
+            $vm->setTemplate('oj-colorbox-module/parent-refresh');            
         }
         
+        $vm->setTerminal(false);            
         $response = $event->getResponse() ?: new HttpResponse();
         $response->setStatusCode(200);
 
