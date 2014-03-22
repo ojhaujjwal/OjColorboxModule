@@ -19,8 +19,10 @@ class Module implements
      */
     public function onBootstrap(EventInterface $e)
     {
-        $serviceManager = $e->getApplication()->getServiceManager();
-        $e->attachAggregate($serviceManager->get('OjColorboxModule\View\Strategy\ColorboxStrategy'));
+        $application = $e->getApplication();
+        $serviceManager = $application->getServiceManager();
+        $eventManager = $application->getEventManager();
+        $eventManager->attachAggregate($serviceManager->get('OjColorboxModule\View\Strategy\ColorboxStrategy'));
     }
 
     /**
