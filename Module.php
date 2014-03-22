@@ -37,16 +37,16 @@ class Module implements
      */
     public function getAutoloaderConfig()
     {
-        return array(
-            'Zend\Loader\ClassMapAutoloader' => array(
+        return [
+            'Zend\Loader\ClassMapAutoloader' => [
                 __DIR__ . '/autoload_classmap.php',
-            ),
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
+            ],
+            'Zend\Loader\StandardAutoloader' => [
+                'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 
     /**
@@ -62,8 +62,8 @@ class Module implements
                     => 'OjColorboxModule\Controller\Plugin\ParentRedirect',
             ],
             'aliases' => [
-                'colorboxClose' => 'OjColorboxModule\Controller\Plugin\ColorboxClose',
-                'ParentRedirect' => 'OjColorboxModule\Controller\Plugin\ParentRedirect',
+                'colorboxClose'     => 'OjColorboxModule\Controller\Plugin\ColorboxClose',
+                'ParentRedirect'    => 'OjColorboxModule\Controller\Plugin\ParentRedirect',
             ]
         ];
     }
