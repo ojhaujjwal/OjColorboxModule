@@ -6,6 +6,7 @@ use Zend\EventManager\EventManagerInterface;
 use OjColorboxModule\Exception;
 use Zend\Http\Response as HttpResponse;
 use Zend\Mvc\MvcEvent;
+use Zend\View\Model\ViewModel;
 
 class ColorboxStrategy extends AbstractListenerAggregate
 {
@@ -23,8 +24,9 @@ class ColorboxStrategy extends AbstractListenerAggregate
      */
     public function onError(MvcEvent $event)
     {
+        $exception = $event->getParam('exception');
         // Do nothing if no error or if response is not HTTP response
-        if (!($exception = $event->getParam('exception') instanceof Exception\ExceptionInterface)
+        if (!$exception instanceof Exception\ExceptionInterface
             || ($result = $event->getResult() instanceof HttpResponse)
             || !($response = $event->getResponse() instanceof HttpResponse)
         ) {
