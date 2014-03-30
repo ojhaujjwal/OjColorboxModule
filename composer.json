@@ -1,0 +1,35 @@
+{
+    "name": "ujjwal/colorbox-module",
+    "description": "This is a lightweight Zend Framework 2 module to help you use the jQuery Colorbox Plugin",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "module",
+        "zendframework",
+        "colorbox",
+        "jquery"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/ojhaujjwal/OjColorboxModule",
+    "authors": [
+        {
+            "name": "Ujjwal Ojha",
+            "email": "bring2uo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zend-mvc": "~2.2",
+        "zendframework/zend-servicemanager": "~2.2",
+        "zendframework/zend-modulemanager": "~2.2",
+        "zendframework/zend-view": "~2.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "OjColorboxModule": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
