@@ -8,7 +8,7 @@ class ParentRedirect extends Redirect
 {
     public function toUrl($url)
     {
-        throw new Exception\ParentRedirectException();
+        throw new Exception\ParentRedirectException($url);
     }
 
     public function refresh()
